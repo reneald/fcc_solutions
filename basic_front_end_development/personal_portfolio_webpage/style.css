@@ -1,3 +1,22 @@
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: 'Alegreya', serif;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 37px;
+}
+
+p {
+  font-size: 21px;
+}
+
 #home {
   text-align: center;
   background-color: #0000FF;

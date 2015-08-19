@@ -2,6 +2,22 @@
   text-align: center;
   background-color: #0000FF;
 }
+
+#about {
+  text-align: left;
+  background-color: #FF0000;
+}
+
+#portfolio {
+  text-align: left;
+  background-color: #00FF00;
+}
+
+#contact {
+  text-align: left;
+  background-color: #222222;
+}
+
 .profilepic{
   width: 300px;
   border-radius: 50%;

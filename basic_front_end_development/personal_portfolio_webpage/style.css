@@ -17,6 +17,10 @@ p {
   font-size: 21px;
 }
 
+#menu {
+  background-color: #AAAAAA;
+}
+
 #home {
   text-align: center;
   background-color: #0000FF;
@@ -34,7 +38,7 @@ p {
 
 #contact {
   text-align: left;
-  background-color: #222222;
+  background-color: #AAAAAA;
 }
 
 .profilepic{

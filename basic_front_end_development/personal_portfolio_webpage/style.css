@@ -27,12 +27,6 @@ p {
   background-color: #AAAAAA;
 }
 
-#menu {
-  color: black;
-  background-color: #AAA;
-  padding: 20px 20% 20px 20px;
-}
-
 #home {
   text-align: center;
   background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_home.jpg?raw=true") 50% 0 no-repeat fixed;

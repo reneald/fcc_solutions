@@ -13,84 +13,94 @@
 			window.console = window.console || function(t) {};
 		</script>
 		<script src="script.js"></script>
-		<!--
-		Copyright (c) 2015 by Leander Van Reeth (http://codepen.io/reneald/pen/gpNYrW)
+			<!--
+			Copyright (c) 2015 by Leander Van Reeth (http://codepen.io/reneald/pen/gpNYrW)
 
-		Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-		The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+			The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		-->
 		<title>Reneald Web Design</title>
 	</head>
 	<body>
-		<div class="container-fluid cntr-all">
-			
-			
-			<!-- Menu/header -->
-			<div class="every row" id="menu">
-				<div id="leander">Leander Van Reeth</div>
-				<div class="btn-group" id="menu-bts">
-					<button class="btn btn-default btn-lg reneald-menu-btn"><a href="#home">Home</a></button>
-					<button class="btn btn-default btn-lg reneald-menu-btn"><a href="#about">About</a></button>
-					<button class="btn btn-default btn-lg reneald-menu-btn"><a href="#portfolio">Portfolio</a></button>
-					<button class="btn btn-default btn-lg reneald-menu-btn"><a href="#contact">Contact</a></button>
-				</div>
+		<!-- Menu/header -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Leander Van Reeth</a>
+		    </div>
+
+		    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#">About</a></li>
+		        <li><a href="#">Portfolio</a></li>
+		        <li><a href="#contact">Contact</a></li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+
+		<!-- Home page -->
+		<div class="every row" id="home">
+			<h1>Reneald web design</h1>
+			<h2>A bad acronym is better than no acronym.</h2>
+			<div class="btn-group" id="social">
+				<button class="btn btn-default btn-lg">Facebook</button>
+				<button class="btn btn-default btn-lg">GitHub</button>
+				<button class="btn btn-default btn-lg">LinkedIn</button>
+				<button class="btn btn-default btn-lg">FreeCodeCamp</button>
 			</div>
-			
-			
-			<!-- Home page -->
-			<div class="every row" id="home">
-				<h1>Reneald web design</h1>
-				<h2>A bad acronym is better than no acronym.</h2>
-				<div class="btn-group" id="social">
-					<button class="btn btn-default btn-lg">Facebook</button>
-					<button class="btn btn-default btn-lg">GitHub</button>
-					<button class="btn btn-default btn-lg">LinkedIn</button>
-					<button class="btn btn-default btn-lg">FreeCodeCamp</button>
-				</div>
-			</div>
-			
-			
-			<!-- About -->
-			<div class="every row" id="about">
-				<div class="col-md-4">
-					<h1>Reneald web design.</h1>
-					<p>Lorem ipsum dolor sit amet, id mei labore everti probatus. Per molestie evertitur ut, et illum laoreet mel. Et harum docendi has. Nisl populo his at, has nostrum voluptatibus ut. Aliquam vulputate eloquentiam ad his, cu hinc pertinacia quo.</p>
-				</div>
-				<div class="col-md-6">
-					<img class="profilepic" src="https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/profilepic.jpg?raw=true" />
-				</div>
-			</div>
-			
-			
-			<!-- Portfolio -->
-			<div class="every row" id="portfolio">
-				<div class="col-md-12">
-					<h1>Portfolio.</h1>
-					<h2>Some of my recent work. Come back later for more!</h2>
-				</div>
-			</div>
-			
-			
-			<!-- Contact -->
-			<div class="every row" id="contact">
-				<div class="col-md-7" id="email">
-					<h2>Connect with Reneald web design:<br>
-				        <a href="mailto:#">delea.vanreeth@gmail.com</a>
-					</h2>
-				</div>
-				<div class="col-md-5" id="social-buttons"></div>
-			</div>
-			
-			
-			
-			<footer id="footer">
-	  			<p>Lorem ipsum</p>
-			</footer>	
 		</div>
+
+
+		<!-- About -->
+		<div class="every row" id="about">
+			<div class="col-md-4">
+				<h1>Reneald web design.</h1>
+				<p>Lorem ipsum dolor sit amet, id mei labore everti probatus. Per molestie evertitur ut, et illum laoreet mel. Et harum docendi has. Nisl populo his at, has nostrum voluptatibus ut. Aliquam vulputate eloquentiam ad his, cu hinc pertinacia quo.</p>
+			</div>
+			<div class="col-md-6">
+				<img class="profilepic" src="https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/profilepic.jpg?raw=true" />
+			</div>
+		</div>
+
+
+		<!-- Portfolio -->
+		<div class="every row" id="portfolio">
+			<div class="col-md-12">
+				<h1>Portfolio.</h1>
+				<h2>Some of my recent work. Come back later for more!</h2>
+			</div>
+		</div>
+
+
+		<!-- Contact -->
+		<div class="every row" id="contact">
+			<div class="col-md-7" id="email">
+				<h2>Connect with Reneald web design:<br>
+					<a href="mailto:#">delea.vanreeth@gmail.com</a>
+				</h2>
+			</div>
+			<div class="col-md-5" id="social-buttons"></div>
+		</div>
+
+
+
+		<footer id="footer">
+			<p>Lorem ipsum</p>
+		</footer>	
 	</body>
-	
+
 
 </html>

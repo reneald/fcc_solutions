@@ -11,10 +11,12 @@ h1 {
   font-family: 'Alegreya', serif;
   font-weight: 700;
   font-size: 50px;
+  text-shadow: 1px 0 black, 0 0 black, 1px 0 black, 0 -1px black;
 }
 
 h2 {
   font-size: 37px;
+  text-shadow: 1px 0 black, 0 0 black, 1px 0 black, 0 -1px black;
 }
 
 p {

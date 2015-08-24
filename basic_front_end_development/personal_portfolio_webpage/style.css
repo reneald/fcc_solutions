@@ -70,3 +70,24 @@ p {
   width: 300px;
   border-radius: 50%;
 }
+
+.img-portfolio{
+  width: 100%;
+}
+
+td{
+  text-align: center;
+  text-shadow: 1px 0 black, 0 0 black, 1px 0 black, 0 -1px black;
+}
+
+a{
+  color: #DDD;
+}
+
+a:hover{
+  color: #AAA;
+}
+
+table td {
+    border-top: none !important;
+}

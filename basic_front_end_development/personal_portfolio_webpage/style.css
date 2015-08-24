@@ -1,7 +1,7 @@
 body {
   font-family: 'Alegreya Sans', sans-serif;
   font-weight: 700;
-  color: #777777;
+  color: #DDD;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -23,47 +23,37 @@ p {
   font-size: 21px;
 }
 
-.reneald-menu-btn {
-  border-style: none;
-  border-radius: 0;
-  background-color: #AAAAAA;
-}
-
 #home {
   text-align: center;
   background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_home.jpg?raw=true") 50% 0 no-repeat fixed;
-  background-color: #0000FF;
-  padding: 100px 300px 160px 300px;
+  padding: 100px 30% 160px 30%;
   background-size: cover;
 }
 
 #about {
   text-align: left;
   background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_about.jpg?raw=true") 50% 0 no-repeat fixed;
-  background-color: #FF0000;
-  padding: 100px 300px 160px 300px;
+  padding: 100px 30% 160px 30%;
   background-size: cover;
 }
 
 #portfolio {
   text-align: left;
   background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_portfolio.png?raw=true") 50% 0 no-repeat fixed;
-  background-color: #00FF00;
-  padding: 100px 300px 160px 300px;
+  padding: 100px 30% 160px 30%;
   background-size: cover;
 }
 
 #contact {
   text-align: left;
   background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_contact.jpg?raw=true") 50% 0 no-repeat fixed;
-  background-color: #333333;
-  padding: 100px 300px 160px 300px;
+  padding: 100px 30% 160px 30%;
   background-size: cover;
 }
 
 #footer {
   color: #000000;
-  padding: 50px 300px 0px 300px;
+  padding: 10px 30% 0px 30%;
 }
 
 .profilepic{
@@ -75,11 +65,6 @@ p {
   width: 100%;
 }
 
-td{
-  text-align: center;
-  text-shadow: 1px 0 black, 0 0 black, 1px 0 black, 0 -1px black;
-}
-
 a{
   color: #DDD;
 }
@@ -88,6 +73,10 @@ a:hover{
   color: #AAA;
 }
 
-table td {
-    border-top: none !important;
+nav {
+  padding: 0 30% 0 30%;
+}
+
+#reneald-footer {
+  font-size: 12px;
 }

@@ -6,7 +6,11 @@ var engQuotes = [
 ["What’s the difference between a hippo and a Zippo? One is really heavy, the other is a little lighter.", "Masai Graham"],
 ]
 
-var dutchQuotes ] [
+var dutchQuotes = [
 ["Wie van zichzelf houdt geeft pas echt iets kostbaars als hij Ik hou van jou tegen een ander zegt", "Harry Jekkers"],
 ["Geef mij een lach, geef mij wat zonneschijn", "Chirojeugd Vlaanderen"]
 ]
+
+$(document).ready(function() {
+	$("#quote").append("Insert quote here.")
+})

@@ -25,35 +25,35 @@ p {
 
 #home {
   text-align: center;
-  background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_home.jpg?raw=true") 50% 0 no-repeat fixed;
-  padding: 100px 30% 160px 30%;
+  background: url("img/background_home.jpg") 50% 0 no-repeat fixed;
+  padding: 100px 20% 160px 20%;
   background-size: cover;
 }
 
 #about {
   text-align: left;
-  background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_about.jpg?raw=true") 50% 0 no-repeat fixed;
-  padding: 100px 30% 160px 30%;
+  background: url("img/background_about.jpg") 50% 0 no-repeat fixed;
+  padding: 100px 20% 160px 20%;
   background-size: cover;
 }
 
 #portfolio {
   text-align: left;
-  background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_portfolio.png?raw=true") 50% 0 no-repeat fixed;
-  padding: 100px 30% 160px 30%;
+  background: url("img/background_portfolio.png") 50% 0 no-repeat fixed;
+  padding: 100px 20% 160px 20%;
   background-size: cover;
 }
 
 #contact {
   text-align: left;
-  background: url("https://github.com/reneald/fcc_solutions/blob/portfolio/basic_front_end_development/personal_portfolio_webpage/img/background_contact.jpg?raw=true") 50% 0 no-repeat fixed;
-  padding: 100px 30% 160px 30%;
+  background: url("img/background_contact.jpg") 50% 0 no-repeat fixed;
+  padding: 100px 20% 160px 20%;
   background-size: cover;
 }
 
 #footer {
   color: #000000;
-  padding: 10px 30% 0px 30%;
+  padding: 10px 20% 0px 20%;
 }
 
 .profilepic{
@@ -73,8 +73,11 @@ a:hover{
   color: #AAA;
 }
 
+a.a-portfolio{
+  color: #888;
+}
 nav {
-  padding: 0 30% 0 30%;
+  padding: 0 20% 0 20%;
 }
 
 #reneald-footer {

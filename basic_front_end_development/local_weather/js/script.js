@@ -1,44 +1,37 @@
 "use strict";
 $(document).ready(function() {
-	/* API key doesn't seem necessary?
-	var apiKey = "32a0785e5cc9ee1264cd122fd739d9b9";
-	*/
-	// set var "unit" so we can change between Celsius and Fahrenheit
+	// setting various vars up with default values
 	var unit = ["metric", "C"];
-
-	// get user"s location
-
-	var lat = $.getJSON("http://www.telize.com/geoip/185.61.75.15",
-		function(loc) {
-			return loc.latitude;
-		});
-	var lon = $.getJSON("http://www.telize.com/geoip",
-		function(loc) {
-			return loc.longitude;
-		});
+	var lat = 35;
+	var lon = 139;
+	var temp = 20.0;
 
 	$("#weather").prepend(lat);
 
+	//get user's location
+	$.getJSON('http://www.telize.com/geoip',
+		function(loc) {
+			lat = loc.latitude.toString();
+			lon = loc.longitude.toString();
+			getWeather(lat, lon, unit);
+		}
+	);
 
-	// default location if location cannot be gathered
-	/*
-	var lat = 35;
-	var lon = 139; */
-
-	getWeather(lat, lon, unit);
 
 	// making the Celsius-Fahrenheit button work
 	$("#unit").click(function() {
 		if (unit[0] == "metric") {
 			unit[0] = "imperial";
 			unit[1] = "F";
+			celcToFah(temp);
 			$("#unit").text("Celsius");
 		} else {
 			unit[0] = "metric";
 			unit[1] = "C";
+			fahToCelc(temp);
 			$("#unit").text("Fahrenheit");
-		}
-		getWeather(lat, lon, unit);
+		};
+		$("#weather").text(temp + "\xB0" + unit[1]);
 	});
 
 	// send request to OpenWeatherMap
@@ -53,11 +46,23 @@ $(document).ready(function() {
 
 	/* Function for current weather */
 	function getWeather(lat, lon, unit) {
-		$.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=" + unit[0] + "&callback=?",
+		$.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=" + unit[0] + "&callback=?", 
 			function(result) {
-				$("#weather").text("It is " + result.main.temp + " \xB0" + unit[1] + " in " + result.name);
+				temp = result.main.temp;
+				$("#weather").text(temp + "\xB0" + unit[1]);
+				$("#location").append(result.name);
 			}
 		);
-	}
+	};
+
+	function celcToFah(t){
+		temp = temp*9/5 + 32;
+		temp = Math.round(temp*100)/100;
+	};
+	
+	function fahToCelc(t){
+		temp = (temp-32) * 5/9;
+		temp = Math.round(temp*100)/100;
+	}	
 
 });

@@ -1,7 +1,9 @@
 $(document).ready(function() {
 	"use strict";
 	// setting various vars up with default values
-	var unit = ["metric", "C"];
+	var celsius = ["Celsius", "C"];
+	var fahrenheit = ["Fahrenheit", "F"];
+	var unit = celsius;
 	var lat = 35;
 	var lon = 139;
 	var temp = 20.0;
@@ -21,16 +23,14 @@ $(document).ready(function() {
 
 	// making the Celsius-Fahrenheit button work
 	$("#unit").click(function() {
-		if (unit[0] == "metric") {
-			unit[0] = "imperial";
-			unit[1] = "F";
+		if (unit == celsius) {
+			unit = fahrenheit;
 			celcToFah(temp);
-			$("#unit").text("Celsius");
+			$("#unit").text(celsius[0]);
 		} else {
-			unit[0] = "metric";
-			unit[1] = "C";
+			unit = celsius;
 			fahToCelc(temp);
-			$("#unit").text("Fahrenheit");
+			$("#unit").text(fahrenheit[0]);
 		}
 		$("#weather").text(temp + "\xB0" + unit[1]);
 	});
@@ -52,21 +52,22 @@ $(document).ready(function() {
 
 	// Functions for geolocation
 	function getLocation() {
-		if (Modernizr.geolocation) {
+		//if (Modernizr.geolocation) {
 			navigator.geolocation.getCurrentPosition(showWeather, geoLocError);
-		}
-		else {
-			$("#it-is").text("Your browser doesn't support geolocation. You won't be able to use this site until I update it with some other functionality");
-			$("#weather").empty();
-			$("#location").empty();
-			$("#pref").empty();
-		}
+		//}
+		//else {
+		//	$("#it-is").text("Your browser doesn't support geolocation. You won't be able to use this site until I update it with some other functionality");
+		//	$("#weather").empty();
+		//	$("#location").empty();
+		//	$("#pref").empty();
+		//}
 	}
 
 	function showWeather(position) {
 		lat = position.coords.latitude;
 		lon = position.coords.longitude;
-		getWeather(lat, lon, unit);
+		$("#debug").append("latitude: " + lat + " longitude: " + lon);
+		//getWeather(lat, lon, unit);
 	}
 
 	function geoLocError(err) {
@@ -77,7 +78,7 @@ $(document).ready(function() {
 			$("#pref").empty();
 		}
 		else if(err.code == 2) {
-			$("#it-is").text("I'm sorry, I couldn't get your location because of some obscure problem involving satellites. Maybe one broke down and crashed in your backyard. Could you check that and then reload this site?");
+			$("#it-is").text("I'm sorry, I couldn't get your location because of some obscure problem involving satellites. Maybe one broke down and crashed in your back yard. Could you check that and then reload this site?");
 			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();
@@ -92,7 +93,7 @@ $(document).ready(function() {
 
 	/* Function for current weather */
 	function getWeather(lat, lon, unit) {
-		$.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=" + unit[0] + "&callback=?",
+		$.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric" + "&callback=?",
 			function(result) {
 				temp = result.main.temp;
 				$("#weather").text(temp + "\xB0" + unit[1]);

@@ -35,9 +35,6 @@ $(document).ready(function() {
 		$("#weather").text(temp + "\xB0" + unit[1]);
 	});
 
-	
-
-
 
 	// send request to OpenWeatherMap
 	/* Function for forecast. Not in use right now, we'll get the current weather to work now and maybe change to forecast later.
@@ -52,39 +49,42 @@ $(document).ready(function() {
 
 	// Functions for geolocation
 	function getLocation() {
-		//if (Modernizr.geolocation) {
+		if (Modernizr.geolocation) {
 			navigator.geolocation.getCurrentPosition(showWeather, geoLocError);
-		//}
-		//else {
-		//	$("#it-is").text("Your browser doesn't support geolocation. You won't be able to use this site until I update it with some other functionality");
-		//	$("#weather").empty();
-		//	$("#location").empty();
-		//	$("#pref").empty();
-		//}
+		}
+		else {
+			$("#it-is").text("Your browser doesn't support geolocation. You won't be able to use this site until I update it with some other functionality");
+			$("#weather").empty();
+			$("#location").empty();
+			$("#pref").empty();
+		}
 	}
 
 	function showWeather(position) {
 		lat = position.coords.latitude;
 		lon = position.coords.longitude;
 		$("#debug").append("latitude: " + lat + " longitude: " + lon);
-		//getWeather(lat, lon, unit);
+		getWeather(lat, lon, unit);
 	}
 
 	function geoLocError(err) {
 		if (err.code == 1) {
-			$("#it-is").text("You disabled geolocation! Why did you do that?! This won't work at all! In the future you will be able to choose a location manually, but for now I can't do anything for you.");
+			$("#debug").text("Either you denied me geolocation access, or you're running this site from a local file in Chrome. In the future you will be able to choose a location manually, but for now I can't do anything for you.");
+			$("#it-is").empty();
 			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();
 		}
 		else if(err.code == 2) {
-			$("#it-is").text("I'm sorry, I couldn't get your location because of some obscure problem involving satellites. Maybe one broke down and crashed in your back yard. Could you check that and then reload this site?");
+			$("#debug").text("I'm sorry, I couldn't get your location because of some obscure problem involving satellites. Maybe one broke down and crashed in your backyard. Could you check that and then reload this site?");
+			$("#it-is").empty();
 			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();
 		}
 		else if(err.code == 3) {
-			$("#it-is").text("I'm trying to get your location but this is taking too long and I'm getting bored. Please try again later.");
+			$("#debug").text("I'm trying to get your location but this is taking too long and I'm getting bored. Please try again later.");
+			$("#it-is").empty();
 			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();

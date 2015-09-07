@@ -94,10 +94,42 @@ $(document).ready(function() {
 		$.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric" + "&callback=?",
 			function(result) {
 				temp = result.main.temp;
+				var x = result.weather[0].id;
 				$("#weather").text(temp + "\xB0" + unit[1]);
 				$("#weather-icon").prepend('<img src="http://openweathermap.org/img/w/' + result.weather[0].icon + '.png" />');
-				$("#description").text(titleCase(result.weather[0].description));
+				//$("#description").text(titleCase(result.weather[0].description));
 				$("#location").append(result.name);
+				if (x < 300 || x == 901 || x == 902) {
+					$("#description").text("and there's a " + result.weather[0].description + " raging in the sky.");
+				} else if (x < 600) {
+					$("#description").text("and there is " + result.weather[0].description + " falling from the sky.");
+				} else if (x == 602) {
+					$("#description").text("and that snow just won't stop falling. Make yourself a nice cup of hot cocoa and enjoy.")
+				} else if (x < 700) {
+					$("#description").text("and " + result.weather[0].description + " is swirling from the sky.");
+				} else if (x < 800) {
+					$("#description").text("and there is " + result.weather[0].description + " in the air.");
+				} else if (x == 800) {
+					$("#description").text("and the sky is clear. Please go outside now.");
+				} else if (x < 900) {
+					$("#description").text("and there are " + result.weather[0].description + " in the sky.");
+				} else if (x == 900) {
+					$("#description").text("and there is a tornado outside. Get yourself to safety!");
+				} else if (x == 903) {
+					$("#description").text("Careful, your nose might freeze and fall off.");
+				} else if (x == 904) {
+					$("#description").text("and I hope that your air conditioning works. Stay hydrated!");
+				} else if (x == 905) {
+					$("#description").text("and there's a mean wind blowing.");
+				} else if (x == 906) {
+					$("#description").text("and you probably shouldn't leave the house without a helmet.");
+				} else if (x == 951) {
+					$("#description").text("and there is no wind.");
+				} else if (x < 960) {
+					$("#description").text("and there is a " + result.weather[0].description + " blowing outside.");
+				} else {
+					$("#description").text("and there is a " + result.weather[0].description + " raging outside. Be careful!");
+				}
 			}
 		);
 	}
@@ -117,8 +149,8 @@ $(document).ready(function() {
 	// Function for formatting the weather description
 	function titleCase(str) {
 		return str.toLowerCase().split(' ').map(function(val) {
-		return (val.charAt(0).toUpperCase() + val.substr(1));
-	}).join(' ');
-}
+			return (val.charAt(0).toUpperCase() + val.substr(1));
+		}).join(' ');
+	}
 
 });

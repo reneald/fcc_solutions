@@ -1,0 +1,41 @@
+body {
+  background: url("https://github.com/reneald/fcc_solutions/blob/local_weather/basic_front_end_development/local_weather/img/background.jpg?raw=true");
+  font: 4.21875vmin "Alegreya Sans";
+}
+
+h1 {
+  font: 10vmin "Alegreya Sans SC";
+}
+
+div {
+  background-color: #FFF;
+  opacity: 0.50;
+}
+
+div #title,
+div #debug,
+div #weather-icon,
+div .row,
+div #it-is,
+div #weather,
+div #location,
+div #description,
+div #pref {
+  opacity: 1;
+}
+
+#unit {
+  font-size: 4.21875vmin;
+  border: 0 none;
+  border-radius: 0;
+}
+
+#it-is,
+#location,
+#weather {
+  font-size: 7.5vmin;
+}
+
+footer {
+  font-size: 3.16406vmin;
+}

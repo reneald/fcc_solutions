@@ -1,23 +1,13 @@
 $(document).ready(function() {
 	"use strict";
 	// setting various vars up with default values
-	var celsius = ["Celsius", "C"];
-	var fahrenheit = ["Fahrenheit", "F"];
+	var celsius = ["Celcius?", "C"];
+	var fahrenheit = ["Fahrenheit?", "F"];
 	var unit = celsius;
 	var lat = 35;
 	var lon = 139;
 	var temp = 20.0;
 
-	/* going to test geolocation API
-		//get user's location
-		$.getJSON("http://www.telize.com/geoip",
-			function(loc) {
-				lat = loc.latitude.toString();
-				lon = loc.longitude.toString();
-				getWeather(lat, lon, unit);
-			}
-		);
-	*/
 	getLocation();
 
 
@@ -32,9 +22,8 @@ $(document).ready(function() {
 			fahToCelc(temp);
 			$("#unit").text(fahrenheit[0]);
 		}
-		$("#weather").text(temp + "\xB0" + unit[1]);
+		$("#it-is").text("It is " + temp + "\xB0" + unit[1]);
 	});
-
 
 	// send request to OpenWeatherMap
 	/* Function for forecast. Not in use right now, we'll get the current weather to work now and maybe change to forecast later.
@@ -54,7 +43,6 @@ $(document).ready(function() {
 		} else {
 			$("#debug").text("Your browser doesn't support geolocation. You won't be able to use this site until I update it with some other functionality");
 			$("#it-is").empty();
-			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();
 		}
@@ -63,10 +51,10 @@ $(document).ready(function() {
 	function showWeather(position) {
 		lat = position.coords.latitude;
 		lon = position.coords.longitude;
-		//$("#debug").append("latitude: " + lat + " longitude: " + lon);
 		getWeather(lat, lon, unit);
 	}
 
+	//Error messages
 	function geoLocError(err) {
 		if (err.code == 1) {
 			$("#debug").text("Either you denied me geolocation access, or you're running this site from a local file in Chrome. In the future you will be able to choose a location manually, but for now I can't do anything for you.");
@@ -95,10 +83,10 @@ $(document).ready(function() {
 			function(result) {
 				temp = result.main.temp;
 				var x = result.weather[0].id;
-				$("#weather").text(temp + "\xB0" + unit[1]);
-				$("#weather-icon").prepend('<img src="http://openweathermap.org/img/w/' + result.weather[0].icon + '.png" />');
+				$("#it-is").text("It is " + temp + "\xB0" + unit[1]);
+				$("#weather-icon").append('<img src="http://openweathermap.org/img/w/' + result.weather[0].icon + '.png" />');
 				//$("#description").text(titleCase(result.weather[0].description));
-				$("#location").append(result.name);
+				$("#location").text("in " + result.name);
 				if (x < 300 || x == 901 || x == 902) {
 					$("#description").text("and there's a " + result.weather[0].description + " raging in the sky.");
 				} else if (x < 600) {
@@ -144,13 +132,4 @@ $(document).ready(function() {
 		temp = (temp - 32) * 5 / 9;
 		temp = Math.round(temp * 100) / 100;
 	}
-
-
-	// Function for formatting the weather description
-	function titleCase(str) {
-		return str.toLowerCase().split(' ').map(function(val) {
-			return (val.charAt(0).toUpperCase() + val.substr(1));
-		}).join(' ');
-	}
-
 });

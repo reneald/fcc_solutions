@@ -1,0 +1,5 @@
+$body-font: 'Alegreya Sans', sans-serif;
+
+body {
+  font: 10vmin $body-font;
+}

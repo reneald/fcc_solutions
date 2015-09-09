@@ -1,3 +1,23 @@
 body {
   font-family: 'Alegreya Sans', sans-serif;
+	font-size: 5.0625vmin;
+}
+
+h1 {
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 12vmin;
+}
+
+#unit {
+	font-size: 5.0625vmin;
+	border: 0 none;
+	border-radius: 0;
+}
+
+#it-is, #location, #weather {
+	font-size: 9vmin;
+}
+
+footer {
+	font-size: 3.797vmin;
 }

@@ -1,5 +1,10 @@
-$body-font: 'Alegreya Sans', sans-serif;
-
 body {
-  font: 10vmin $body-font;
+  font: 10vmin "Alegreya Sans", sans-serif;
+  text-align: center;
+}
+
+footer {
+  font-size: 2.37305vmin;
+  position: fixed;
+  bottom: 0;
 }

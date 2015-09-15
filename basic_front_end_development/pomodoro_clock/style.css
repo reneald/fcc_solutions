@@ -2,4 +2,17 @@ $body-font: 'Alegreya Sans', sans-serif;
 
 body {
   font: 10vmin $body-font;
+  text-align: center;
+  background: #B6C2D9;
+  color: #272932;
+}
+
+footer {
+  font-size: 2.37305vmin;
+	position: fixed; 
+  bottom: 0;
+}
+
+a {
+  color: #272932;
 }

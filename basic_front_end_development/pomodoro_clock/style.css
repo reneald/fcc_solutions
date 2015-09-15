@@ -1,18 +1,14 @@
+$body-font: 'Alegreya Sans', sans-serif;
+
 body {
-<<<<<<< HEAD
   font: 10vmin $body-font;
   text-align: center;
   background: #B6C2D9;
   color: #272932;
-=======
-  font: 10vmin "Alegreya Sans", sans-serif;
-  text-align: center;
->>>>>>> origin/pomodoro
 }
 
 footer {
   font-size: 2.37305vmin;
-<<<<<<< HEAD
 	position: fixed; 
   bottom: 0;
 }
@@ -20,8 +16,3 @@ footer {
 a {
   color: #272932;
 }
-=======
-  position: fixed;
-  bottom: 0;
-}
->>>>>>> origin/pomodoro

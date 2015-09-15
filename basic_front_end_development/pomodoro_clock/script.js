@@ -2,12 +2,8 @@ $(document).ready(function() {
 	// setting up vars for timer
 	var origTimer = 1500;
 	var timer = 1500;
-<<<<<<< HEAD
 	var countdownCheck = 1500;
 	var startTime = new Date().getTime();
-=======
-  var startTime = new Date().getTime();
->>>>>>> origin/pomodoro
 	var seconds = Math.floor(timer % 60);
 	var minutes = Math.floor(timer / 60);
 	var playPause = $("#start-button").text();
@@ -31,7 +27,7 @@ $(document).ready(function() {
 			pomodoro = setInterval(countdown, 100);
 		} else {
 			$("#start-button").text("play_arrow");
-			playPause = $("#start-button").text();			
+			playPause = $("#start-button").text();
 			clearInterval(pomodoro);
 			countdownCheck = timer;
 		}
@@ -40,17 +36,14 @@ $(document).ready(function() {
 
 	$("#replay-button").click(replay);
 
-<<<<<<< HEAD
 
 	function drawClock() {
 		ctx.arc(0, 0, radius, 0, 2 * Math.PI);
 		ctx.strokeStyle = "#272932";
-		ctx.lineWidth = radius*0.1;
+    ctx.lineWidth = radius*0.1;
 		ctx.stroke();
 	}
 
-=======
->>>>>>> origin/pomodoro
 	function countdown() {
 		if (timer > 0) {
 			if (seconds < 10) {
@@ -59,35 +52,24 @@ $(document).ready(function() {
 				$("#countdown").text(minutes + ":" + seconds);
 			}
 			var time = new Date().getTime() - startTime;
-<<<<<<< HEAD
 			timer = countdownCheck - (Math.floor(time / 100) / 10);
-=======
-      timer = origTimer - (Math.floor(time/100)/10);
->>>>>>> origin/pomodoro
 			seconds = Math.floor(timer % 60);
 			minutes = Math.floor(timer / 60);
 		} else {
 			$("#countdown").text("Boom");
 		}
 	}
-  
-  function replay() {
-    clearInterval(pomodoro);
+
+	function replay() {
+		clearInterval(pomodoro);
 		timer = origTimer;
 		countdownCheck = origTimer;
 		var seconds = timer % 60;
 		var minutes = Math.floor(timer / 60);
 		$("#countdown").text(minutes + ":0" + seconds);
-<<<<<<< HEAD
 		if (playPause == "pause") {
 			$("#start-button").text("play_arrow");
 			playPause = "play_arrow";
 		}
 	}
-=======
-    if (playPause == "pause") {
-      $("#start-button").text("play_arrow");
-    }
-  }
->>>>>>> origin/pomodoro
 });

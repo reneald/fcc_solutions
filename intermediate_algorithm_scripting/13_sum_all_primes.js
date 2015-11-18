@@ -1,12 +1,23 @@
 function sumPrimes(num) {
-  var currentNumber = 3;
-  var divider = 2;
+  //result has a starting value of 2 because that is the lowest prime number (which will therefore always be included)
   var result = 2;
+  var currentNumber = 3; //the for loop has to start at 3 because result has the starting value 2.
+  var divider = 2;
+  
+  // 1 is not a prime, so return nothing. Also stops the for loop from happening.
+  if (num === 1){
+    return 0;
+  }
   
   //looping through every number from 3 until num
   for (currentNumber = 3; currentNumber <= num; currentNumber++) {
-    for (divider = 2; divider < num; divider++) {
-      if (currentNumber % modulo === 0) {break;}
+    //divide currentNumber by all lower numbers (except 1) to check if currentNumber is a prime
+    for (divider = 2; divider <= currentNumber; divider++) {
+      if (currentNumber % divider === 0) {
+        break;
+      }
+    }
+    if (currentNumber == divider) {
       result += currentNumber;
     }
   }
@@ -14,4 +25,4 @@ function sumPrimes(num) {
   return result;
 }
 
-sumPrimes(10);
+sumPrimes(1);

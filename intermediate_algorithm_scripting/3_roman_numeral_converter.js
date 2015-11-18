@@ -20,7 +20,8 @@ function convert(num) {
 		} else if (numArr[1] >= 5) {
 			romNum.push("D");
 			for (var i = numArr[1]; i > 5; i--) {
-				romNum.push("C")};
+				romNum.push("C")
+			};
 		} else if (numArr[1] == 4) {
 			romNum.push("CD");
 		} else {
@@ -35,7 +36,8 @@ function convert(num) {
 		} else if (numArr[2] >= 5) {
 			romNum.push("L");
 			for (var i = numArr[2]; i > 5; i--) {
-				romNum.push("X")};
+				romNum.push("X")
+			};
 		} else if (numArr[2] == 4) {
 			romNum.push("XL");
 		} else {
@@ -50,7 +52,8 @@ function convert(num) {
 		} else if (numArr[3] >= 5) {
 			romNum.push("V");
 			for (var i = numArr[3]; i > 5; i--) {
-				romNum.push("I")};
+				romNum.push("I")
+			};
 		} else if (numArr[3] == 4) {
 			romNum.push("IV");
 		} else {

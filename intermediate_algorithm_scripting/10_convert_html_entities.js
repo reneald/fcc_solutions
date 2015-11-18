@@ -5,13 +5,13 @@ function convert(str) {
   str = str.split("");
 
   for (var i = str.length - 1; i >= 0; i--) {
-  	for (var j = entities.length - 1; j >= 0; j--) {
-  		if (str[i] == entities[j]) {
-  			str[i] = charref[j];
-  		}
+    for (var j = entities.length - 1; j >= 0; j--) {
+      if (str[i] == entities[j]) {
+        str[i] = charref[j];
+      }
     }
   }
-  
+
   return str.join('');
 }
 

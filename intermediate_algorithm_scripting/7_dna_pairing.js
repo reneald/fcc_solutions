@@ -1,6 +1,6 @@
 function pair(str) {
   var dna = [];
-  
+
   str.split('').map(function(currentValue) {
     if (currentValue == "A") {
       dna.push(["A", "T"]);
@@ -12,7 +12,7 @@ function pair(str) {
       dna.push(["C", "G"]);
     }
   });
- return dna;
+  return dna;
 }
 
 pair("GCG");

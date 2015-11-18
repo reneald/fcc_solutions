@@ -7,7 +7,7 @@ function translate(str) {
 		suffix = "way";
 	} else {
 	// Case: word starts with one or more consonants
-	// Pig Latin will end in 'consonant(s) + ay'
+		// Pig Latin will end in 'consonant(s) + ay'
 		suffix = str.substring(0, firstVowel) + "ay";
 	}
 	// Take everything after (and including) the first vowel

@@ -25,28 +25,28 @@ p {
 
 #home {
   text-align: center;
-  background: url("img/background_home.jpg") 50% 0 no-repeat fixed;
+  background: url("https://reneald.github.io/images/portf_background_home.jpg") 50% 0 no-repeat fixed;
   padding: 100px 20% 160px 20%;
   background-size: cover;
 }
 
 #about {
   text-align: left;
-  background: url("img/background_about.jpg") 50% 0 no-repeat fixed;
+  background: url("https://reneald.github.io/images/portf_background_about.jpg") 50% 0 no-repeat fixed;
   padding: 100px 20% 160px 20%;
   background-size: cover;
 }
 
 #portfolio {
   text-align: left;
-  background: url("img/background_portfolio.png") 50% 0 no-repeat fixed;
+  background: url("https://reneald.github.io/images/portf_background_portfolio.png") 50% 0 no-repeat fixed;
   padding: 100px 20% 160px 20%;
   background-size: cover;
 }
 
 #contact {
   text-align: left;
-  background: url("img/background_contact.jpg") 50% 0 no-repeat fixed;
+  background: url("https://reneald.github.io/images/portf_background_contact.jpg") 50% 0 no-repeat fixed;
   padding: 100px 20% 160px 20%;
   background-size: cover;
 }

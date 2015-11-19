@@ -14,8 +14,8 @@ function sumPrimes(num) {
 
   //looping through every number from 3 until num
   for (currentNumber = 3; currentNumber <= num; currentNumber++) {
-    //divide currentNumber by all lower numbers (except 1)
-    // to check if currentNumber is a prime
+    //divide currentNumber by all lower numbers (except 1)to check if
+    //currentNumber is a prime
     for (divider = 2; divider <= currentNumber; divider++) {
       if (currentNumber % divider === 0) {
         break;

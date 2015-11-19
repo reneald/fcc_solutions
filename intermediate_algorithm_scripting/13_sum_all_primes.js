@@ -1,7 +1,6 @@
 function sumPrimes(num) {
-  //result has a starting value of 2 because that is the lowest prime number (which will therefore always be included)
-  var result = 2;
-  var currentNumber = 3; //the for loop has to start at 3 because result has the starting value 2.
+  var result = 2;  //starting value of 2 because that is the lowest prime number (which will therefore always be included, unless num == 1)
+  var currentNumber = 3;  //the for loop has to start at 3 because result has the starting value 2.
   var divider = 2;
 
   // 1 is not a prime, so return nothing. Also stops the for loop from happening.

@@ -1,0 +1,23 @@
+$body-font: 'Alegreya Sans', sans-serif;
+$countdown-font: 'Droid Sans Mono', sans-serif;
+
+body {
+  font: 10vmin $body-font;
+  text-align: center;
+  background: #272932;
+  color: #B6C2D9;
+}
+
+#countdown {
+  font: 10vmin $countdown-font;
+}
+
+footer {
+  font-size: 2.37305vmin;
+  position: fixed; 
+  bottom: 0;
+}
+
+a {
+  color: #B6C2D9;
+}

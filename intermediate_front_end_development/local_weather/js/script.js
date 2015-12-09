@@ -9,8 +9,7 @@ $(document).ready(function() {
 	var temp = 20.0;
 
 	getLocation();
-
-
+	
 	// making the Celsius-Fahrenheit button work
 	$("#unit").click(function() {
 		if (unit == celsius) {
@@ -22,7 +21,7 @@ $(document).ready(function() {
 			fahToCelc(temp);
 			$("#unit").text(fahrenheit[0]);
 		}
-		$("#it-is").text("It is " + temp + "\xB0" + unit[1]);
+		$("#it-is").text("It is " + temp + " \xB0" + unit[1]);
 	});
 
 	// send request to OpenWeatherMap
@@ -59,19 +58,16 @@ $(document).ready(function() {
 		if (err.code == 1) {
 			$("#debug").text("Either you denied me geolocation access, or you're running this site from a local file in Chrome. In the future you will be able to choose a location manually, but for now I can't do anything for you.");
 			$("#it-is").empty();
-			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();
 		} else if (err.code == 2) {
 			$("#debug").text("I'm sorry, I couldn't get your location because of some obscure problem involving satellites. Maybe one broke down and crashed in your backyard. Could you check that and then reload this site?");
 			$("#it-is").empty();
-			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();
 		} else if (err.code == 3) {
 			$("#debug").text("I'm trying to get your location but this is taking too long and I'm getting bored. Please try again later.");
 			$("#it-is").empty();
-			$("#weather").empty();
 			$("#location").empty();
 			$("#pref").empty();
 		}
@@ -83,8 +79,7 @@ $(document).ready(function() {
 			function(result) {
 				temp = result.main.temp;
 				var x = result.weather[0].id;
-				$("#it-is").text("It is " + temp + "\xB0" + unit[1]);
-				$("#weather-icon").append('<img src="http://openweathermap.org/img/w/' + result.weather[0].icon + '.png" />');
+				$("#it-is").text("It is " + temp + " \xB0" + unit[1]);
 				//$("#description").text(titleCase(result.weather[0].description));
 				$("#location").text("in " + result.name);
 				if (x < 300 || x == 901 || x == 902) {

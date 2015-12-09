@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 	/* Function for current weather */
 	function getWeather(lat, lon, unit) {
-		$.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric",
+		$.getJSON("//api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric" + "&callback=?",
 			function(result) {
 				temp = result.main.temp;
 				var x = result.weather[0].id;

@@ -1,9 +1,5 @@
 body {
-<<<<<<< HEAD:intermediate_front_end_development/local_weather/css/style.css
-  background: url("https://reneald.github.io/images/weather_background.jpg");
-=======
   background: #000 url("https://reneald.github.io/images/weather_background.jpg");
->>>>>>> origin/local_weather:basic_front_end_development/local_weather/css/style.css
   font: 4.21875vmin "Alegreya Sans";
 }
 

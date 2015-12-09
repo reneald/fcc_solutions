@@ -1,0 +1,58 @@
+$title-font: 'Alegreya Sans SC';
+$body-font: 'Alegreya Sans';
+$size1: 10vmin;
+$size2: $size1 * 0.75;
+$size3: $size2 * 0.75;
+$size4: $size3 * 0.75;
+$size5: $size4 * 0.75;
+$size6: $size5 * 0.75;
+$primary-color: #000;
+$background-img: #000 url("https://reneald.github.io/images/weather_background.jpg");
+
+body {
+	background: $background-img;
+	font: $size4 $body-font;
+	}
+
+h1 {
+	font: $size1 $title-font;
+}
+
+.container {
+	background-color: #FFF;
+	opacity: 0.50;
+	#title,
+	#debug,
+	.row,
+	#it-is,
+	#location,
+	#description,
+	#pref {
+		opacity: 1;
+	}
+}
+
+#unit {
+	font-size: $size4;
+	color: $primary-color;
+	border: 0 none;
+	border-radius: 0;
+}
+
+#it-is,
+#location {
+	font-size: $size2;
+	color: $primary-color;
+}
+
+footer {
+	font-size: $size6;
+	background-color: #FFF;
+	opacity: 1;
+	position: fixed; 
+    bottom: 0;
+}
+
+a {
+	color: $primary-color;
+}

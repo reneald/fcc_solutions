@@ -9,12 +9,11 @@
 	<!-- load custom fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,400italic,500,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,300,400italic,500,700' rel='stylesheet' type='text/css'>
-	<!-- load MUI -->
-	<link href="https://cdn.rawgit.com/reneald/fcc_solutions/local_weather/basic_front_end_development/local_weather/css/mui.min.css" rel="stylesheet" type="text/css" media="screen" />
-	<script src="js/mui.min.js"></script>
+	<!-- load Materialize -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css" rel="stylesheet" type="text/css" media="screen" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 	<!-- load custom stylesheets & scripts -->
-	<script src="js/modernizr.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/reneald/fcc_solutions/local_weather/basic_front_end_development/local_weather/css/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 	<script src="js/script.js"></script>
 
 	<!--
@@ -26,26 +25,21 @@
 
 	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	-->
-	<title>Local Weather - Reneald</title>
+	<title>Pomodoro Clock - Reneald</title>
 </head>
 <body>
-	<div class="container">
-	<div id="title">
-		<h1>Here comes the sun</h1>
-	</div>
-	<div id="debug"></div>
-	<div id="weather-icon"></div>
-	<div id="it-is">It is always 20 &deg;C</div>
-	<div id="location">somewhere</div>
-	<div id="description">and I say that's all right.</div>
-	<div id="pref">
-		Would you rather see this in
-		<button class="btn btn-default" id="unit">Fahrenheit?</button>
-	</div>
-
-	<footer>
-		<p>Copyright &copy; <a href="http://codepen.io/reneald/full/gpNYrW/">Reneald</a> 2015. All rights reserved.</p>
+<div class="container">
+  <div id="content">
+  <h1>A simple Pomodoro clock</h1>
+    <canvas id="clock" width="200" heigth="200"></canvas>
+     <div id="countdown"></div>
+     <div>
+        <a href="#countdown"><i class="large material-icons" id="start-button">play_arrow</i></a>
+        <a href="#countdown"><i class="large material-icons" id="replay-button">replay</i></a>
+      </div>
+  </div>
+  <footer>
+    <p>Copyright &copy; <a href="http://codepen.io/reneald/full/gpNYrW/">Reneald</a> 2015. All rights reserved.</p>
 	</footer>
-	</div>
+</div>
 </body>
-</html>

@@ -1,5 +1,26 @@
-$body-font: 'Droid Sans Mono', Monaco, Courier, monospace;
+$button-font: 'Droid Sans Mono', Monaco, Courier, monospace;
 
-body {
-    font-family: $body-font;
+#calculator {
+    width: 325px;
+    height: 350px;
+    text-align: center;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 50% / 10%;
+}
+
+input {
+    font-family: $button-font;
+}
+
+button {
+    @extend input;
+    height: 20px;
+    .tall {
+        // height: 40px;
+    }
+}
+
+footer {
+    text-align: center;
 }

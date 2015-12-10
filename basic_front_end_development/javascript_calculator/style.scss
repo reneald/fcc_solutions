@@ -1,7 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
-
 $body-font: 'Droid Sans Mono', Monaco, Courier, monospace;
 
 body {
-    font: $body-font;
+    font-family: $body-font;
 }

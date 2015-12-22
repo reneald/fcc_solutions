@@ -19,7 +19,7 @@ input, .row button {
   border-radius: 50% / 10%;
   margin: 2px; }
 .row .tall {
-  height: 80px;
+  height: 64px;
   float: right;
   margin-right: 24px;
   margin-left: -8px; }

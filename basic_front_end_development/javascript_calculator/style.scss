@@ -1,24 +1,29 @@
 $button-font: 'Droid Sans Mono', Monaco, Courier, monospace;
-
-#calculator {
-    width: 325px;
-    height: 350px;
+@mixin shape($width, $heigth, $border-width) {
+    width: $width;
+    height: $heigth;
     text-align: center;
     border-style: solid;
-    border-width: 4px;
+    border-width: $border-width;
     border-radius: 50% / 10%;
+}
+
+#calculator {
+    @include shape(325px, 350px, 4px);
 }
 
 input {
     font-family: $button-font;
+    border-radius: 5px;
 }
 
 button {
     @extend input;
-    height: 20px;
+    @include shape(30px, 30px, 2px);
     .tall {
-        // height: 40px;
+        height: 80px;
     }
+    margin: 2px;
 }
 
 footer {

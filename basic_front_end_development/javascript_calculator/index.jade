@@ -4,8 +4,9 @@ html
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    // load jQuery
+    // load jQuery & JavaScript
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+    script(src="script.js")
     // load css & custom font
     link(rel="stylesheet", type="text/css", href="style.css", media="screen")
     link(href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono', rel='stylesheet', type='text/css')
@@ -47,7 +48,7 @@ html
       .row
         each val in [1, 2, 3]
           button= val
-        button.tall +
+      button.tall +
       .row
         each val in [0, ".", "="]
           button= val

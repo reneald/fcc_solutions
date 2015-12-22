@@ -7,10 +7,19 @@
   border-radius: 50% / 10%; }
 
 input, button {
-  font-family: "Droid Sans Mono", Monaco, Courier, monospace; }
+  font-family: "Droid Sans Mono", Monaco, Courier, monospace;
+  border-radius: 5px; }
 
 button {
-  height: 20px; }
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50% / 10%;
+  margin: 2px; }
+  button .tall {
+    height: 80px; }
 
 footer {
   text-align: center; }

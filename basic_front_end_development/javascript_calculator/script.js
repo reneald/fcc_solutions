@@ -1,10 +1,19 @@
 $(document).ready(function() {
     "use strict";
-    var input = [];
-    var current = "";
+    let inputs = [];
+    let total = 0;
+    let current = "";
     $("button").click(function() {
         // current = current.concat(this.html());
-        $("footer").html("success");
+        let val = $(this).text();
+        
+        //clicked a number? --> store in 'current'
+        if (!isNaN(val) || val === ".") {
+            current += val;
+            $("#answer").val(current.substr(0, 10));
+        }
+        //using next line to see if function runs
+        $("footer").html(current);
     })
     
 })

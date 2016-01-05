@@ -8,7 +8,8 @@
 
 input, .row button {
   font-family: "Droid Sans Mono", Monaco, Courier, monospace;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-bottom: 20px; }
 
 .row button {
   width: 40px;

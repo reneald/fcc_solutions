@@ -9,7 +9,7 @@ $button-font: 'Droid Sans Mono', Monaco, Courier, monospace;
 }
 
 #calculator {
-    @include shape(325px, 350px, 4px);
+    @include shape(275px, 350px, 4px);
 }
 
 input {

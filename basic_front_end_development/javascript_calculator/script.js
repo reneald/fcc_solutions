@@ -12,8 +12,8 @@ $(document).ready(function() {
             current += val;
             $("#answer").val(current.substr(0, 10));
         }
-        //using next line to see if function runs
-        $("footer").html(current);
+        
+        //using next line to test function
     })
     
 })

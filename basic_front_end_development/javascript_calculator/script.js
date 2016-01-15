@@ -1,7 +1,13 @@
 $(document).ready(function() {
   "use strict";
-  let total = 0;
+  let total = "0";
   let current = "";
+  let operators = {
+    "+": function(a, b) {return a + b},
+    "-": function(a, b) {return a - b},
+    "X": function(a, b) {return a * b},
+    "/": function(a, b) {return a / b}
+  }
     
   $("button").click(function() {
       // current = current.concat(this.html());
@@ -18,6 +24,9 @@ $(document).ready(function() {
         // Reset calculator entirely
         current = "";
         total = "";
+      } else {
+        total = toString(operators[val](Number(total)), Number(current));
+        $("#answer").val(total.substr(0, 10));
       }
         
         
@@ -30,7 +39,7 @@ $(document).ready(function() {
   */
   
   function operate(operator) {
-
+    
   }
     
 })

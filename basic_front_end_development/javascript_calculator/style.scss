@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Quantico);
 $button-font: 'Droid Sans Mono', Monaco, Courier, monospace;
 @mixin shape($width, $heigth, $border-width) {
     width: $width;
@@ -13,14 +14,15 @@ $button-font: 'Droid Sans Mono', Monaco, Courier, monospace;
 }
 
 input {
-    font-family: $button-font;
+    font-family: 'Quantico';
+    font-size: 16px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
 .row {
     button {
-        @extend input;
+        font-family: $button-font;
         @include shape(40px, 30px, 2px);
         margin: 2px;
     }

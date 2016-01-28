@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Quantico);
 #calculator {
   width: 275px;
   height: 350px;
@@ -6,12 +7,14 @@
   border-width: 4px;
   border-radius: 50% / 10%; }
 
-input, .row button {
-  font-family: "Droid Sans Mono", Monaco, Courier, monospace;
+input {
+  font-family: 'Quantico';
+  font-size: 16px;
   border-radius: 5px;
   margin-bottom: 20px; }
 
 .row button {
+  font-family: "Droid Sans Mono", Monaco, Courier, monospace;
   width: 40px;
   height: 30px;
   text-align: center;

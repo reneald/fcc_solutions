@@ -25,6 +25,7 @@ input {
         font-family: $button-font;
         @include shape(40px, 30px, 2px);
         margin: 2px;
+        background-color: red;
     }
     .tall {
         height: 64px;

@@ -17,7 +17,7 @@ function smallestCommons(arr) {
   let i = 2;
   while (!mult) {
     for (let j = arr[-1]; j <= 0; j--) {
-      if (currNum % arr[j] != 0) {
+      if (currNum % arr[j] !== 0) {
         // Stop for loop if currNum can't be divided by arr[j]
         break;
       }

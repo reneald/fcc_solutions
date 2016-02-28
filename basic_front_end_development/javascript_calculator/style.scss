@@ -1,23 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Quantico);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
 $button-font: 'Droid Sans Mono', Monaco, Courier, monospace;
 @mixin shape($width, $heigth, $border-width) {
     width: $width;
     height: $heigth;
     text-align: center;
-    border-style: solid;
+    //border-style: solid;
     border-width: $border-width;
     border-radius: 50% / 10%;
 }
 
 #calculator {
-    @include shape(275px, 350px, 4px);
+    margin-top: 20px;
+    padding-top: 20px;
+    @include shape(275px, 350px, 1px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(to right, grey, white 10%, grey 90%); 
+}
+
+#title {
+    font-family: $button-font;
 }
 
 input {
     font-family: 'Quantico';
     font-size: 16px;
+    text-align: right;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .row {
@@ -27,15 +37,20 @@ input {
         margin: 2px;
         background-color: red;
     }
+    button:focus {
+            outline: 0;
+        }
     .tall {
         height: 64px;
         float: right;
-        margin-right: 24px;
-        margin-left:  -8px;
+        margin-right: 45px;
+        margin-left:  -38px;
     }
 }
 
-
-footer {
-    text-align: center;
+.footer {
+    font-family: $button-font;
+    // Y U NO WORK?
+    font-size: 10;
+    padding-left: 45;
 }

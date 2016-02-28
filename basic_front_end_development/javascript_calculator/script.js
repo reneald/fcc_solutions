@@ -3,62 +3,70 @@ $(document).ready(function() {
   let total = 0;
   let current = "0";
   const operators = {
-    "+": function(a, b) {return a + b},
-    "-": function(a, b) {return a - b},
-    "X": function(a, b) {return a * b},
-    "/": function(a, b) {return a / b}
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "×": (a, b) => a * b,
+    "÷": (a, b) => a / b,
+    "%": (a, b) => a*b/100,
+    "AC": function() {total = 0; current = "0"; inputs = [];},
+    "CE": function() {current = "0";}
   };
-  let currOp = "";
+  let inputs = [];
   
   //Calculator should show "0" at start
   $("#answer").val(current.substr(0, 10));
+  
+  // what to do when an operator is used
+  function calculate() {
+    if (total === 0) {
+      // If this is the first operator in the calculation,
+      // we only store the current number in *total*
+      // This is necessary to show subtotals
+      total = parseFloat(inputs[0]);
+    } else {
+      // If this is not the first operator,
+      // find the previous operator & input and calculate the new total.
+      let tempOp = inputs[inputs.length-3];
+      total = operators[tempOp](total, parseFloat(current));
+    }
     
+  }
+  
   $("button").click(function() {
-      // current = current.concat(this.html());
       let value = $(this).text();
       
       // Clicked a number? --> store in 'current'
-      if (!isNaN(value)) {
+      if (!isNaN(value) || value == ".") {
         if (current === "0") {
           current = "";
         }
         current += value;
-        $("#answer").val(current.substr(0, 10));
-      } else if (value === ".") {
-          current += value;
-          $("#answer").val(current.substr(0, 10));
-      } else if (value === "CE") {
-        // Only current number must be deleted, total and operator should remain.
+        $("#answer").val(current);
+        
+      // Clicked operator? --> store current and operator in inputs
+      // then execute calculate()
+      } else if (value == "+" || value == "-" || value == "X" || value == "/") {
+        inputs.push(parseFloat(current));
+        inputs.push(value);
+        calculate();
+        $("#answer").val(total);
         current = "0";
-        $("#answer").val(current.substr(0, 10));
-      } else if (value === "AC") {
-        // Reset calculator entirely
-        currOp = "";
+      // Some exceptions    
+      } else if (value == "%") {
+        total = operators[value](total, parseFloat(current));
+        $("#answer").val(total);
+      } else if (value == "=") {
+        inputs.push(parseFloat(current));
+        inputs.push(value);
+        calculate();
+        $("#answer").val(total);
         current = "0";
-        total = 0;
-        $("#answer").val(current.substr(0, 10));
-      } else if (value === "=") {
-        operate(value);
-        currOp = "";
+        inputs = [];
       } else {
-        operate(value);
-        currOp = value;
+        operators[value]();
+        $("#answer").val(current.substr(0, 10));
+        console.log(value);
+        console.log(inputs);
       }
-        
-        
   });
-  
-  function operate(myValue) {
-    if (currOp === "") {
-      currOp = myValue;
-    }
-    if (total === 0 && (currOp === "X" || currOp === "/")) {
-      total = 1;
-    }
-    total = operators[currOp](total, parseFloat(current));
-    current = "0";
-    $("#answer").val(total);
-  }
-  
 });
-

@@ -15,7 +15,7 @@ $button-font: 'Droid Sans Mono', Monaco, Courier, monospace;
     padding-top: 20px;
     @include shape(275px, 350px, 1px);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: linear-gradient(to right, grey, white 10%, white 90%, grey); 
+    background: linear-gradient(to right, white, #CCCCCC 50%, white 95%); 
 }
 
 #title {
@@ -35,7 +35,7 @@ input {
         font-family: $button-font;
         @include shape(40px, 30px, 2px);
         margin: 2px;
-        background-color: #BBBBBB;
+        background-color: #DADADA;
     }
     button:focus {
             outline: 0;
@@ -50,8 +50,7 @@ input {
 
 .footer {
     font-family: $button-font;
-    // Y U NO WORK?
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 20px;
     margin-left: 42px;
     margin-right: 42px;

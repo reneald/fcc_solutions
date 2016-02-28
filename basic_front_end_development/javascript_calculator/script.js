@@ -5,8 +5,8 @@ $(document).ready(function() {
   const operators = {
     "+": (a, b) => a + b,
     "-": (a, b) => a - b,
-    "×": (a, b) => a * b,
-    "÷": (a, b) => a / b,
+    "X": (a, b) => a * b,
+    "/": (a, b) => a / b,
     "%": (a, b) => a*b/100,
     "AC": function() {total = 0; current = "0"; inputs = [];},
     "CE": function() {current = "0";}
@@ -41,7 +41,7 @@ $(document).ready(function() {
           current = "";
         }
         current += value;
-        $("#answer").val(current);
+        $("#answer").val(current.substr(0, 10));
         
       // Clicked operator? --> store current and operator in inputs
       // then execute calculate()
@@ -49,17 +49,17 @@ $(document).ready(function() {
         inputs.push(parseFloat(current));
         inputs.push(value);
         calculate();
-        $("#answer").val(total);
+        $("#answer").val(total.toString().substr(0, 10));
         current = "0";
       // Some exceptions    
       } else if (value == "%") {
         total = operators[value](total, parseFloat(current));
-        $("#answer").val(total);
+        $("#answer").val(total.toString().substr(0, 10));
       } else if (value == "=") {
         inputs.push(parseFloat(current));
         inputs.push(value);
         calculate();
-        $("#answer").val(total);
+        $("#answer").val(total.toString().substr(0, 10));
         current = "0";
         inputs = [];
       } else {

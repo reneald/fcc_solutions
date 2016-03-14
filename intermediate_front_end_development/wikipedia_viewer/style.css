@@ -17,7 +17,7 @@ Safari user? You're out of luck for the moment.
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 1vh;
   grid-column-gap: 1vh;
-  grid-template-rows: 1fr 1fr 1fr 1fr; }
+  grid-template-rows: 1fr 1fr 1fr 0.75fr; }
 
 @media screen and (max-width: 612px) {
   .app-layout {
@@ -26,6 +26,8 @@ input {
   grid-column: 2 / 4;
   grid-row: 2 / 3;
   background: #E5E7E6;
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 4.21875vmin;
   color: #141301;
   border: 0;
   padding-left: 4.21875vmin; }
@@ -36,6 +38,7 @@ input {
     font-style: italic; }
 
 button {
+  font-family: "Alegreya Sans", sans-serif;
   font-size: 4.21875vmin;
   font-weight: 700;
   border: 0;
@@ -63,7 +66,8 @@ a {
 
 footer {
   grid-column: 2 / 5;
-  grid-row: 4; }
+  grid-row: 4 / 5;
+  vertical-align: text-bottom; }
 
 .title {
   grid-column: 2 / 5;

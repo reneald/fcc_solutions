@@ -1,0 +1,118 @@
+//GRID PREFIXING VOOR IE/EDGE
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400italic,700);
+$body-font: 'Alegreya Sans', sans-serif;
+$size1: 10vmin;
+$size2: $size1 * 0.75;
+$size3: $size2 * 0.75;
+$size4: $size3 * 0.75;
+$size5: $size4 * 0.75;
+$size6: $size5 * 0.75;
+$background-color: #B7B5B3;
+$text-color: #141301;
+$color3: #60992D;
+$color4: #8CAE68;
+$color5: #E5E7E6;
+
+body {
+  background: $background-color;
+  color: $text-color;
+  font-family: $body-font;
+  font-size: $size4;
+}
+
+
+/* Grid setup
+To enable grid layout module in Chrome/Opera, navigate to chrome://flags and enable 'Experimental Web Platform features'
+
+To enable grid layout module in Firefox, navigate to about:config, search for the 'layout.css.grid.enabled' flag, then double click or press enter to toggle it to true.
+
+Safari user? You're out of luck for the moment.
+*/
+.app-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 1vh;
+  grid-column-gap: 1vh;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 612px) {
+  .app-layout {
+    grid-template-columns: 10vw 1fr 1fr 10vw;
+  }
+}
+
+
+
+input {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+  background: $color5;
+  color: $text-color;
+  border: 0;
+  padding-left: $size4;
+  &:focus{
+    outline: none;
+  }
+  &::placeholder{
+    color: $background-color;
+    font-style: italic;
+  }
+}
+
+// button animation is WIP
+button{
+  font-size: $size4;
+  font-weight: 700;
+  border: 0;
+  transition: all 0.5s;
+  cursor: pointer;
+  span{
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    &:after{
+      content: '\2003 \2192';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -6vh;
+      transition: 0.5s;
+    }
+  }
+  &:hover span{
+    padding-right: 10vh;
+    &:after{
+      opacity: 1;
+      right: 2vh;
+    }
+  }
+}
+
+a{
+  color: $text-color;
+}
+
+footer {
+  grid-column: 2 / 5;
+  grid-row: 4;
+}
+
+.title {
+  grid-column: 2 / 5;
+  grid-row: 1 / 2;
+  font-size: $size1;
+}
+
+#search {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  background: $color3;
+}
+
+#random {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  background: $color4;
+}

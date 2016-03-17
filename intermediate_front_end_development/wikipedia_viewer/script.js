@@ -1,24 +1,33 @@
 $(document).ready(function() {
-  "use strict";
   let search = document.getElementById("search");
   let input = document.getElementById("input");
+  let random = document.getElementById("random");
+
   function wikiSearch() {
-    $.getJSON("https://en.wikipedia.org/w/api.php?action=query&titles=" + input.value + "&format=json&callback=?", function(result) {
-      let id = Object.keys(result.query.pages)[0];
-      window.open("https://en.wikipedia.org/wiki/index.php?curid=" + id, "_self");
+    $(".app-layout").css({
+      "grid-template-rows": "auto 10vh 10vh 10vh",
+      "-ms-grid-rows": "auto 10vh 10vh 10vh 10vh"
+    });
+    $(".title").css("font-size", "7.5vmin");
+    $("footer").css("display", "none");
+    $("#results").empty();
+    $.getJSON("https://en.wikipedia.org//w/api.php?action=opensearch&format=json&search=" + input.value + "&callback=?", function(result) {
+      for (let i = 0; i < result[1].length; i++) {
+        $("#results").append("<div class='card'></div>");
+        $(".card:last-child").append("<a href='" + result[3][i] + "'><h2>" + result[1][i] + "</h2>" + result[2][i] + "</a>");
+      }
     });
   }
-  
+
   search.addEventListener("click", function() {
     wikiSearch();
   });
   input.addEventListener("keydown", function(e) {
-    if (e.keyCode === 13) {// checks if Enter is pressed
+    if (e.keyCode === 13) { // checks if Enter is pressed
       wikiSearch();
     }
   })
-  
-  let random = document.getElementById("random");
+
   random.addEventListener("click", function() {
     window.open("https://en.wikipedia.org/wiki/Special:Random", "_self");
   })
